@@ -22,6 +22,17 @@ function genererGraphiqueSkills(data) {
     svg.appendChild(text);
 
     // Dessiner l'axe Y
+    let labelY = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    applyStyle(labelY, {
+        "x": "30",
+        "y": "30",
+        "fill": "#947fbd",
+        "font-size": "24px",
+        "font-family": "Arial, sans-serif"
+    });
+    labelY.textContent = "%";
+
+    svg.appendChild(labelY);
     const yAxis = document.createElementNS("http://www.w3.org/2000/svg", "line");
     applyStyle(yAxis, {
         "x1": xOffset.toString(),
@@ -33,6 +44,16 @@ function genererGraphiqueSkills(data) {
     svg.appendChild(yAxis);
 
     // Dessiner l'axe X
+    let labelX = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    applyStyle(labelX, {
+        "x": "300",
+        "y": "385",
+        "fill": "#947fbd",
+        "font-size": "24px",
+        "font-family": "Arial, sans-serif"
+    });
+    labelX.textContent = "Skills";
+    svg.appendChild(labelX);
     const xAxis = document.createElementNS("http://www.w3.org/2000/svg", "line");
     applyStyle(xAxis, {
         "x1": xOffset.toString(),
@@ -94,6 +115,17 @@ function genererGraphique(data) {
     svg.appendChild(text);
 
     // Dessiner l'axe Y
+    let labelY = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    applyStyle(labelY, {
+        "x": "30",
+        "y": "30",
+        "fill": "#947fbd",
+        "font-size": "24px",
+        "font-family": "Arial, sans-serif"
+    });
+    labelY.textContent = "XP";
+
+    svg.appendChild(labelY);
     const yAxis = document.createElementNS("http://www.w3.org/2000/svg", "line");
     applyStyle(yAxis, {
         "x1": xOffset.toString(),
@@ -105,6 +137,17 @@ function genererGraphique(data) {
     svg.appendChild(yAxis);
 
     // Dessiner l'axe X
+    let labelX = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    applyStyle(labelX, {
+        "x": "350",
+        "y": "385",
+        "fill": "#947fbd",
+        "font-size": "24px",
+        "font-family": "Arial, sans-serif"
+    });
+    labelX.textContent = "Projects";
+    svg.appendChild(labelX);
+
     const xAxis = document.createElementNS("http://www.w3.org/2000/svg", "line");
     applyStyle(xAxis, {
         "x1": xOffset.toString(),
