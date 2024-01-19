@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&display=swap');
+@import 'form.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(41, 41, 41) url("../assets/01-trame.svg") no-repeat center center / cover;
+    background-attachment: fixed;
+    backdrop-filter: blur(0.5px);
+    overflow: auto;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#logout {
+    position: fixed;
+    top: 2%;
+    right: 30px;
+    color: white;
+    display: none;
+}
+
+.header {
+    margin-top: 100px;
+    color: white;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.barre {
+    fill: #4d4d4d;
+    transition: fill 0.3s ease;
+}
+
+.barre:hover {
+    fill: #947fbd;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.graphiql,
+.gitea {
+    position: fixed;
+    top: 2%;
+    width: 30px;
+}
+
+.gitea {
+    right: 85px;
+}
+
+.graphiql {
+    right: 150px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.glasmorphism {
+    background: #1d1d1d;
+}
+
+#skills {
+    margin-top: 100px;
+}
+
+#infos {
+    margin-top: 100px;
+    padding: 20px;
+    width: 90%;
+    max-width: 450px; 
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#infos h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid #575757;
+    padding-bottom: 5px;
+    color: #947fbd;
+}
+
+#infos:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.profile-info h2::before {
+    content: attr(data-label);
+    color: white;
+    margin-right: 5px;
+}
+
+/* Responsive media query for tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .header {
+        font-size: 1rem;
+    }
+
+    #skills, #infos, #audit-ratio, #xp {
+        margin-top: 100px;
+    }
+}
+
+@media (min-width: 992px) {
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header {
+        font-size: 1.6rem;
+    }
+
+    #skills, #infos, #xp, #audit-ratio {
+        margin-top: 100px;
+    }
+
+}
