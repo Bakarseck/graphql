@@ -148,9 +148,9 @@ window.addEventListener("DOMContentLoaded", async () => {
             `<div class="profile-info">
             <h2 data-label="Login: ">${data.infos[0].login}</h2>
             <h2 data-label="Name: ">${data.infos[0].firstName} ${data.infos[0].lastName}</h2>
-            <h2 data-label="Audit Ratio: ">${data.infos[0].auditRatio.toFixed(2)} %</h2>
+            <h2 data-label="Audit Ratio: ">${Math.round(data.infos[0].auditRatio)}</h2>
             <h2 data-label="Age: ">${calculateAge(data.infos[0].attrs.dateOfBirth)} years</h2>
-            <h2 data-label="Date Of Birth: ">${formattedDOB}</h2>
+            <h2 data-label="Birthday: ">${formatDate(getNextBirthday(data.infos[0].attrs.dateOfBirth))}</h2>
             <h2 data-label="Xp: ">${Math.round((data.xp.aggregate.sum.amount) / 1000)} XP</h2>
             <h2 data-label="Projects Done: ">${xp.length}</h2>
         </div>`
@@ -172,6 +172,24 @@ function calculateAge(dateOfBirth) {
     }
     
     return age;
+}
+
+function getNextBirthday(dateOfBirth) {
+    const birthDate = new Date(dateOfBirth);
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    const nextBirthday = new Date(currentYear, birthDate.getMonth(), birthDate.getDate());
+
+    if (nextBirthday < today) {
+        nextBirthday.setFullYear(currentYear + 1);
+    }
+
+    return nextBirthday;
+}
+
+function formatDate(date) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+    return date.toLocaleDateString('en-Us', options);
 }
 
 
