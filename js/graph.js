@@ -79,14 +79,6 @@ function genererGraphiqueSkills(data) {
 
         applyStyle(bar, barStyle);
 
-        // Ajouter un événement de survol pour afficher une infobulle
-        bar.onmouseover = function () {
-            showTooltip(`${item.name} - ${item.xp} XP`, event);
-        };
-        bar.onmouseout = function () {
-            hideTooltip();
-        };
-
         svg.appendChild(bar);
     });
 }
