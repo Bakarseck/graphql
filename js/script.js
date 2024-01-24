@@ -37,6 +37,7 @@ function authenticateUser(username, password) {
             window.location.reload()
         })
         .catch(error => {
+            alert("Invalid credentials");
             console.error('Erreur:', error);
         });
 }
